@@ -4,6 +4,6 @@ using namespace std;
 int main() {
     long long n;
     cin >> n;
-    if (pow(2, n) > pow(n, 2)) cout << "Yes" << endl;
-    else cout << "No" << endl;
+    if (2 <= n && n <= 4) cout << "No" << endl;
+    else cout << "Yes" << endl;
 }
