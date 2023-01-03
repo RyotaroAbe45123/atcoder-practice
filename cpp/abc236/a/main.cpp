@@ -5,17 +5,9 @@ int main() {
     string s;
     int a, b;
     cin >> s >> a >> b;
-    for (int i = 0; i < s.size(); i++) {
-        if (i == a - 1) {
-            cout << s[b-1];
-        }
-        else if (i == b - 1) {
-            cout << s[a-1];
-        }
-        else {
-            cout << s[i];
-        }
-    }
-    cout << endl;
+    char tmp = s[a-1];
+    s[a-1] = s[b-1];
+    s[b-1] = tmp;
+    cout << s << endl;
     return 0;
 }
