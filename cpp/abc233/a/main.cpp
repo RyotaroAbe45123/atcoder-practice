@@ -1,10 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int ceil(int a, int b) {
+    return (a + b -1) / b;
+}
+
 int main() {
     int x, y;
     cin >> x >> y;
-    int res = y - x;
-    int r = (res / 10) + min(1, res % 10);
-    cout << max(0, r) << endl;
+    if (x >= y) {
+        cout << '0' << endl;
+        return 0;
+    }
+    else {
+        cout << ceil(y - x, 10) << endl;
+    }
 }
