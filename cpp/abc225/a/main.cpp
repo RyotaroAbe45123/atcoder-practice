@@ -2,16 +2,11 @@
 using namespace std;
 
 int main() {
-    char a, b, c;
-    cin >> a >> b >> c;
-    if (a != b && a != c && b != c) {
-        cout << 6 << endl;
-    }
-    else if (a == b && a == c) {
-        cout << 1 << endl;
-    }
-    else {
-        cout << 3 << endl;
-    }
+    string s;
+    cin >> s;
+    int ans = 3;
+    if (s[0] == s[1] && s[1] == s[2]) ans = 1;
+    else if (s[0] != s[1] && s[1] != s[2] && s[2] != s[0]) ans = 6;
+    cout << ans << endl;
     return 0;
 }
