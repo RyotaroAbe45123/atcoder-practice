@@ -19,6 +19,7 @@ int main() {
             if (b == a[j] && !used[j]) {
                 found = true;
                 used[j] = true;
+                break;
             }
         }
         if (!found) {
