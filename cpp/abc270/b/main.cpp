@@ -4,11 +4,16 @@ using namespace std;
 int main() {
     int x, y, z;
     cin >> x >> y >> z;
-    if (x * y < 0) {
+    if (y < 0) {
+        x -= x;
+        y -= y;
+        z -= z;
+    }
+    if (x < y) {
         cout << abs(x) << endl;
     }
     else {
-        if (abs(z) > abs(y)) {
+        if (z > y) {
             cout << -1 << endl;
         }
         else {
