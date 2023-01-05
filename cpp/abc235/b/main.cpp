@@ -4,16 +4,13 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    long long ans = 0;
+    int h[100010];
     for (int i = 0; i < n; i++) {
-        long long h;
-        cin >> h;
-        if (h > ans) {
-            ans = h;
-        }
-        else {
-            break;
-        }
+        cin >> h[i];
     }
-    cout << ans << endl;
+    int pos = 0;
+    while (pos + 1 < n && h[pos] < h[pos+1]) {
+        pos++;
+    }
+    cout << h[pos] << endl;
 }
