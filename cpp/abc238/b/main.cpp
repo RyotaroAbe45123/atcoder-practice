@@ -5,11 +5,12 @@ int main(){
     int n;
     cin >> n;
     vector<bool> cut(360, false);
+    vector<int> a(n);
     cut[0] = true;
     int p = 0;
     for (int i = 0; i < n; i++) {
-        int a; cin >> a;
-        p += a; p %= 360;
+        cin >> a[i];
+        p = (p + a[i]) % 360;
         cut[p] = true;
     }
     int ans = 0, cur = 0;
