@@ -1,27 +1,24 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int N;
-    vector<int> a(N);
-    for (int i = 0; i < N; i++) cin >> a[i];
+int main(){
+    int n;
+    cin >> n;
     vector<bool> cut(360, false);
     cut[0] = true;
-    int current = 0;
-    for (int i = 0; i < N; i++) {
-        current = (current + a[i]) % 360;
-        a[current] = true;
+    int p = 0;
+    for (int i = 0; i < n; i++) {
+        int a; cin >> a;
+        p += a; p %= 360;
+        cut[p] = true;
     }
-    int ans = 0;
-    int c = 0;
-    for (int i = 0; i < N; i++) {
-        if (a[i]) {
-            ans = max(ans, c);
-            c = 0;
+    int ans = 0, cur = 0;
+    for (int i = 0; i <= 360; i++) {
+        if (cut[i%360]) {
+            ans = max(ans, cur);
+            cur = 0;
         }
-        else {
-            c++;
-        }
+        cur++;
     }
-    cout << c << endl;
+    cout << ans << endl;
 }
