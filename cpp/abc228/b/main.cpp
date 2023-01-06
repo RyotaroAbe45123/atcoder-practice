@@ -4,23 +4,20 @@ using namespace std;
 int main() {
     int n, x;
     cin >> n >> x;
-    vector<int> a(n);
-    vector<bool> known(n, false);
-    for (int i = 0; i < n; i++) cin >> a[i];
+    int a[100001];
+    bool b[100001];
+    for (int i = 1; i <= n; i++) cin >> a[i];
+
     int idx = x;
-    known[idx-1] = true;
-    while (true) {
-        if (known[a[idx-1]-1]) {
-            break;
-        }
-        else {
-            known[a[idx-1]-1] = true;
-            idx = a[idx-1];
-        }
+    do {
+        b[idx] = true;
+        idx = a[idx];
     }
+    while (!b[idx]);
+
     int ans = 0;
-    for (int i = 0; i < n; i++) {
-        if (known[i]) ans++;
+    for (int i = 1; i <= n; i++) {
+        if (b[i]) ans++;
     }
     cout << ans << endl;
     return 0;
