@@ -5,17 +5,20 @@ int main() {
     int n;
     cin >> n;
     vector<string> s(n);
-    map<string, int> m;
     for (int i = 0; i < n; i++) cin >> s[i];
-    for (int i = 0; i < n; i++) {
-        m[s[i]]++;
-    }
-    int ans = 0;
+    int ma = 0;
     string name;
     for (int i = 0; i < n; i++) {
-        if (m[s[i]] > ans) {
-            ans = m[s[i]];
-            name = s[i];
+        string k = s[i];
+        int cnt = 0;
+        for (int j = 0; j < n; j++) {
+            if (s[j] == k) {
+                cnt++;
+            }
+        }
+        if (cnt > ma) {
+            ma = cnt;
+            name = k;
         }
     }
     cout << name << endl;
