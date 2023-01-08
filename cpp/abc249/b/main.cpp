@@ -4,23 +4,18 @@ using namespace std;
 int main() {
     string s;
     cin >> s;
-    vector<int> a(2, 0);
-    vector<int> b(60, 0);
-
+    bool big = false, small = false;
     for (int i = 0; i < (int)s.size(); i++) {
-        if (s[i] - 'A' < 26) a[0]++;
-        else a[1]++;
-        b[(int)(s[i] - 'A')]++;
+        if (isupper(s[i])) big = true;
+        else small = true;
     }
-    bool ok = true;
-    for (int i = 0; i < 2; i++) {
-        if (a[i] == 0) ok = false;
+    bool diff = true;
+    for (int i = 0; i < (int)s.size(); i++) {
+        for (int j = i + 1; j < (int)s.size(); j++) {
+            if (s[i] == s[j]) diff = false;
+        }
     }
-    for (int i = 0; i < 60; i++) {
-        if (b[i] > 1) ok = false;
-    }
-    if (ok) cout << "Yes" << endl;
+    if (big && small && diff) cout << "Yes" << endl;
     else cout << "No" << endl;
     return 0;
-    
 }
