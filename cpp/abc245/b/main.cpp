@@ -6,19 +6,15 @@ int main() {
     cin >> n;
     vector<int> a(n);
     for (int i = 0; i < n; i++) cin >> a[i];
-    int ans = 0;
-    bool found = false;
-    while (!found) {
-        bool f = true;
-        for (int i = 0; i < n; i++) {
-            if (a[i] == ans) {
-                ans++;
-                f = false;
-                break;
-            }   
+    for (int i = 0; i <= n; i++) {
+        bool ok = true;
+        for (int j = 0; j < n; j++) {
+            if (a[j] == i) ok = false;
         }
-        if (f) found = true;
+        if (ok) {
+            cout << i << endl;
+            return 0;
+        }
     }
-    cout << ans << endl;
     return 0;
 }
