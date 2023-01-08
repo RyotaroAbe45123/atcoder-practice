@@ -9,7 +9,7 @@ int main() {
     for (int i = 0; i < n; i++) cin >> a[i];
     for (int i = 0; i < k; i++) cin >> b[i];
     if (n == k) {
-        cout << "No" << endl;
+        cout << "Yes" << endl;
         return 0;
     }
     int ma = 0;
