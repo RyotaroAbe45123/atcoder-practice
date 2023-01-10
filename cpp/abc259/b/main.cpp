@@ -9,11 +9,11 @@ int main() {
         return 0;
     }
     double r = sqrt(a*a + b*b);
-    double theta = acos(a / r) * 180;
-    cout << theta << endl;
+    double theta = atan2(b, a);
+    theta += d * acos(-1.0) / 180.0;
 
-    double aa = r * cos(d + theta);
-    double bb = r * sin(d + theta);
+    double aa = r * cos(theta);
+    double bb = r * sin(theta);
     cout << fixed << setprecision(20) << aa << " " << bb << endl;
     return 0;
 }
