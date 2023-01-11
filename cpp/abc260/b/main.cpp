@@ -1,56 +1,48 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+
 using namespace std;
 
-int main() {
-    int n, x, y, z;
+int main(){
+    int n,x,y,z;
     cin >> n >> x >> y >> z;
-    vector<int> a(n);
-    vector<int> b(n);
-    vector<bool> c(n, false);
+    vector<int> a(n+5),b(n+5);
+    for(int i=1;i<=n;i++){cin >> a[i];}
+    for(int i=1;i<=n;i++){cin >> b[i];}
+    vector<bool> passed(n+5,false);
 
-    for (int i = 0; i < n; i++) cin >> a[i];
-    for (int i = 0; i < n; i++) cin >> b[i];
-
-    for (int i = 0; i < x; i++) {
-        int m = -1;
-        int idx;
-        for (int j = 0; j < n; j++) {
-            if (a[j] > m && !c[j]) {
-                m = a[j];
-                idx = j;
-            }
-        }
-        c[idx] = true;
+    vector<int> c;
+    for(int i=1;i<=n;i++){
+        c.push_back(10000*(100-a[i])+i);
+    }
+    sort(c.begin(),c.end());
+    for(int i=0;i<x;i++){
+        passed[c[i]%10000]=true;
     }
 
-    for (int i = 0; i < y; i++) {
-        int m = -1;
-        int idx;
-        for (int j = 0; j < n; j++) {
-            if (b[j] > m && !c[j]) {
-                m = b[j];
-                idx = j;
-            }
+    c.clear();
+    for(int i=1;i<=n;i++){
+        if(!passed[i]){
+            c.push_back(10000*(100-b[i])+i);
         }
-        c[idx] = true;
+    }
+    sort(c.begin(),c.end());
+    for(int i=0;i<y;i++){
+        passed[c[i]%10000]=true;
     }
 
-    for (int i = 0; i < z; i++) {
-        int m = -1;
-        int idx;
-        for (int j = 0; j < n; j++) {
-            if (a[j] + b[j] > m && !c[j]) {
-                m = a[j] + b[j];
-                idx = j;
-            }
+    c.clear();
+    for(int i=1;i<=n;i++){
+        if(!passed[i]){
+            c.push_back(10000*(200-(a[i]+b[i]))+i);
         }
-        c[idx] = true;
+    }
+    sort(c.begin(),c.end());
+    for(int i=0;i<z;i++){
+        passed[c[i]%10000]=true;
     }
 
-    for (int i = 0; i < n; i++) {
-        if (c[i]) {
-            cout << i+1 << endl;
-        }
+    for(int i=1;i<=n;i++){
+        if(passed[i]){cout << i << "\n";}
     }
     return 0;
-}
+    }
