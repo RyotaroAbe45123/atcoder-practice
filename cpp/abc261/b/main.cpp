@@ -15,22 +15,25 @@ int main() {
         for (int j = 0; j < n; j++) {
             if (i == j) continue;
             if (a[i][j] == 'W') {
-                if (a[i][j] != 'L') {
+                if (a[j][i] != 'L') {
                     cout << "incorrect" << endl;
                     return 0;
                 }
+                else continue;
             }
             else if (a[i][j] == 'L') {
-                if (a[i][j] != 'W') {
+                if (a[j][i] != 'W') {
                     cout << "incorrect" << endl;
                     return 0;
                 }
+                else continue;
             }
             else if (a[i][j] == 'D') {
-                if (a[i][j] != 'D') {
+                if (a[j][i] != 'D') {
                     cout << "incorrect" << endl;
                     return 0;
                 }
+                else continue;
             }
         }
     }
