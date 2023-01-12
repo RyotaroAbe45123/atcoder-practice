@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+const long long mod = 998244353;
+
 int main() {
     long long n;
     cin >> n;
-    for (long long i = 0; i < 998244353; i++) {
-        if ((n - i) % 998244353 == 0) {
-            cout << i << endl;
-            return 0;
-        }
-    }
+    n %= mod;
+    if (n < 0) n += mod;
+    cout << n << endl;
+    return 0;
 }
