@@ -5,28 +5,25 @@ int main() {
     int n, m;
     long long t;
     cin >> n >> m >> t;
-    vector<long long> a(n-1);
-    vector<int> x(m);
-    vector<long long> y(m);
-    for (int i = 0; i < n - 1; i++) cin >> a[i];
-    for (int i = 0; i < m; i++) {
-        cin >> x[i] >> y[i];
-    }
-    int idx = 0;
-    string ans = "No";
-    while (t > 0) {
-        t -= a[idx];
-        if (t > 0) idx++;
-        else break;
+    vector<long long> a(n);
+    vector<long long> bonus(n, 0);
 
-        for (int j = 0; j < m; j++) {
-            if (idx == x[j]-1) t += y[j];
-        }
-        if (idx == n - 1) {
-            ans = "Yes";
-            break;
-        }
+    for (int i = 1; i < n; i++) cin >> a[i];
+    for (int i = 0; i < m; i++) {
+        int x;
+        long long y;
+        cin >> x >> y;
+        bonus[x] = y;
     }
-    cout << ans << endl;
+
+    for (int i = 1; i < n; i++) {
+        if (t <= a[i]) {
+            cout << "No" << endl;
+            return 0;
+        }
+        t -= a[i];
+        t += bonus[i+1];
+    }
+    cout << "Yes" << endl;
     return 0;
 }
