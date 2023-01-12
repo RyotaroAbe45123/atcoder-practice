@@ -22,7 +22,10 @@ int main() {
         for (int j = 0; j < m; j++) {
             if (idx == x[j]-1) t += y[j];
         }
-        if (idx == n - 1) ans = "Yes";
+        if (idx == n - 1) {
+            ans = "Yes";
+            break;
+        }
     }
     cout << ans << endl;
     return 0;
