@@ -4,12 +4,18 @@ using namespace std;
 int main() {
     string s;
     cin >> s;
+    int l = s.size();
     long long ans = 0;
-    long long pow = 1;
-    for (int i = s.size()-1; i >= 0; i--) {
-        ans += (s[i] - 'A' + 1) * pow;
+    long long pow = 26;
+    for (int i = 1; i <=l-1; i++) {
+        ans += pow;
         pow *= 26;
     }
-    cout << ans << endl;
+    long long num = 0;
+    for (int i = 0; i < l; i++) {
+        num *= 26;
+        num += (s[i] - 'A');
+    }
+    cout << ans + num + 1 << endl;
     return 0;
 }
