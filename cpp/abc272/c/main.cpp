@@ -4,18 +4,24 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    vector<long long> a(n);
-    for (int i = 0; i < n; i++) cin >> a[i];
-
-    for (int i = n-1; i >= 0; i--) {
-        for (int j = i - 1; j >= 0; j--) {
-            long long x = a[i] + a[j];
-            if (x % 2 == 0) {
-                cout << x << endl;
-                return 0;
-            }
+    vector<int> odd;
+    vector<int> even;
+    for (int i = 0; i < n; i++) {
+        int a;
+        cin >> a;
+        if (a % 2 == 0) {
+            even.push_back(a);
+        }
+        else {
+            odd.push_back(a);
         }
     }
-    cout << "-1" << endl;
+    sort(odd.rbegin(), odd.rend());
+    sort(even.rbegin(), even.rend());
+
+    int ans = -1;
+    if (odd.size() >= 2) ans = max(ans, odd[0] + odd[1]);
+    if (even.size() >= 2) ans = max(ans, even[0] + even[1]);
+    cout << ans << endl;
     return 0;
 }
