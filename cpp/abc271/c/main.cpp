@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    vector<bool> vol(n, false);
+    vector<bool> vol(n+2, false);
     vector<long long> a(n);
 
     int sold = 0;
