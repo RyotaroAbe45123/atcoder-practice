@@ -11,14 +11,15 @@ int main() {
             cout << a[i] << endl;
         }
         else if (p-1 < i < q-1) {
-            cout << a[r-i-p-1] << endl;
+            cout << a[r-i-p-1] << " ";
         }
         else if (r-1 < i < s-1) {
-            cout << a[i-r+p-1] << endl;
+            cout << a[i-r+p-1] << " ";
         }
         else {
-            cout << a[i] << endl;
+            cout << a[i] << " ";
         }
     }
+    cout << endl;
     return 0;
 }
