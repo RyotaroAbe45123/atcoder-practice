@@ -8,7 +8,7 @@ int main() {
     for (int i = 0; i < n; i++) cin >> a[i];
     for (int i = 0; i < n; i++) {
         if (i < p-1) {
-            cout << a[i] << endl;
+            cout << a[i] << " ";
         }
         else if (p-1 <= i < q-1) {
             cout << a[i-p+r-1] << " ";
