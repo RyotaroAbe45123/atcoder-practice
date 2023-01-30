@@ -10,10 +10,10 @@ int main() {
         if (i < p-1) {
             cout << a[i] << endl;
         }
-        else if (p-1 < i < q-1) {
+        else if (p-1 <= i < q-1) {
             cout << a[i-p+r-1] << " ";
         }
-        else if (r-1 < i < s-1) {
+        else if (r-1 <= i < s-1) {
             cout << a[i-r+p-1] << " ";
         }
         else {
