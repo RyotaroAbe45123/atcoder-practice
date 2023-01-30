@@ -4,17 +4,17 @@ using namespace std;
 int main() {
     int n, p, q, r, s;
     cin >> n >> p >> q >> r >> s;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++) cin >> a[i];
-    for (int i = 0; i < n; i++) {
-        if (i < p-1) {
+    vector<int> a(n+1);
+    for (int i = 1; i <= n; i++) cin >> a[i];
+    for (int i = 1; i <= n; i++) {
+        if (i < p) {
             cout << a[i] << " ";
         }
-        else if (p-1 <= i < q-1) {
-            cout << a[i-p+r-1] << " ";
+        else if (p <= i <= q) {
+            cout << a[i-p+r] << " ";
         }
-        else if (r-1 <= i < s-1) {
-            cout << a[i-r+p-1] << " ";
+        else if (r <= i <= s) {
+            cout << a[i-r+p] << " ";
         }
         else {
             cout << a[i] << " ";
