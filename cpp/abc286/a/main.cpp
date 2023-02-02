@@ -20,6 +20,5 @@ int main() {
             cout << a[i] << (i == n ? "\n" : " ");
         }
     }
-    cout << endl;
     return 0;
 }
