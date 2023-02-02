@@ -17,7 +17,7 @@ int main() {
             cout << a[i-r+p] << " ";
         }
         else {
-            cout << a[i] << (i === n ? "\n" : " ");
+            cout << a[i] << (i == n ? "\n" : " ");
         }
     }
     cout << endl;
