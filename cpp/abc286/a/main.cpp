@@ -10,10 +10,10 @@ int main() {
         if (i < p) {
             cout << a[i] << " ";
         }
-        else if (p <= i <= q) {
+        else if (p <= i && i <= q) {
             cout << a[i-p+r] << " ";
         }
-        else if (r <= i <= s) {
+        else if (r <= i && i <= s) {
             cout << a[i-r+p] << " ";
         }
         else {
