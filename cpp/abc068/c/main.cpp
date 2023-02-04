@@ -4,23 +4,20 @@ using namespace std;
 int main() {
     int n, m;
     cin >> n >> m;
-    vector<vector<int>> G(n);
+
+    set<pair<int, int>> E;
+
     for (int i = 0; i < m; i++) {
         int a, b;
         cin >> a >> b;
         a--, b--;
-        G[a].push_back(b);
-        G[b].push_back(a);
+        E.insert({ a, b });
+        E.insert({ b, a });
     }
+
     string ans = "IMPOSSIBLE";
-    for (auto i: G[0]) {
-        for (int j = 0; j < (int)G[i].size(); j++) {
-            if (G[i][j] == n-1) {
-                ans = "POSSIBLE";
-                cout << ans << endl;
-                return 0;
-            }
-        }
+    for (int i = 1; i < n-1; i++) {
+        if (E.count({ 0, i }) && E.count({ i, n-1})) ans = "POSSIBLE";
     }
     cout << ans << endl;
     return 0;
