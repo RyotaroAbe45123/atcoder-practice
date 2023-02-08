@@ -23,4 +23,5 @@ int main() {
         graph[a].push_back(b);
         graph[b].push_back(a);
     }
+    return 0;
 }
