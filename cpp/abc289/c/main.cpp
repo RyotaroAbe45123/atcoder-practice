@@ -5,4 +5,5 @@ int main() {
     int n, m;
     cin >> n >> m;
     vector<vector<int>> a(m);
+    return 0;
 }
