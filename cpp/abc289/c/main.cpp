@@ -22,5 +22,5 @@ int main() {
         ans += (int)s.size() == n;
     }
     cout << ans << "\n";
-return 0;
+    return 0;
 }
