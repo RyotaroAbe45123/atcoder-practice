@@ -1,0 +1,17 @@
+# 自分の出力（再生成可能）
+out/
+
+# Rust ツールのビルド成果物（重い・再生成可能）
+tools/target/
+
+# ビジュアライザ出力
+vis.html
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# ビジュアライザ生成物
+vis*.html
+*.png
