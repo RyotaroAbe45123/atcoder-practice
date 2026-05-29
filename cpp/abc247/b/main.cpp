@@ -9,7 +9,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> s[i] >> t[i];
     }
-    bool all_ok = true;
+
     for (int i = 0; i < n; i++) {
         bool each_ok = false;
         string a[2] = {s[i], t[i]};

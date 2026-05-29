@@ -8,13 +8,13 @@ int main() {
     for (int i = 1; i <= n; i++) cin >> a[i];
     for (int i = 1; i <= n; i++) {
         if (i < p) {
-            cout << a[i] << " ";
+            cout << a[i] << (i == n ? "\n" : " ");
         }
         else if (p <= i && i <= q) {
-            cout << a[i-p+r] << " ";
+            cout << a[i-p+r] << (i == n ? "\n" : " ");
         }
         else if (r <= i && i <= s) {
-            cout << a[i-r+p] << " ";
+            cout << a[i-r+p] << (i == n ? "\n" : " ");
         }
         else {
             cout << a[i] << (i == n ? "\n" : " ");

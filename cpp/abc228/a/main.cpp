@@ -5,20 +5,10 @@ int main() {
     int s, t, x;
     cin >> s >> t >> x;
     if (t > s) {
-        if (s <= x && x <= t) {
-            cout << "Yes" << endl;
-        }
-        else {
-            cout << "No" << endl;
-        }
+        cout << (s <= x && x < t ? "Yes": "No") << endl;
     }
     else {
-        if (s <= x || x < t) {
-            cout << "Yes" << endl;
-        }
-        else {
-            cout << "No" << endl;
-        }
+        cout << (x < t || s <= x ? "Yes": "No") << endl;
     }
     return 0;
 }
