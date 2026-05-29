@@ -1,8 +1,9 @@
 # 自分の出力（再生成可能）
 out/
 
-# Rust ツールのビルド成果物（重い・再生成可能）
-tools/target/
+# 公式ツール一式（Rustソース/ビルド成果物/入力）。
+# 入力は gen が seed 決定的なので `cargo run -r --bin gen seeds.txt` で再生成可能。
+tools/
 
 # ビジュアライザ出力
 vis.html
